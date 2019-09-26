@@ -1,0 +1,23 @@
+{ 
+    "name":"PerfTest" ,
+    "version": 2,
+    "env": {
+    },
+    "builds": [{
+        "src": "*.js",
+        "use": "@now/node-server"
+    }],
+    "routes": [
+        {
+          "src": "/express",
+          "dest": "/express.js",
+          "methods": ["GET"]
+        },
+        {
+          "src": "/express",
+          "dest": "/express.js",
+          "methods": ["POST"]
+        }
+      ]
+
+}
