@@ -11,11 +11,7 @@ performance.mark('Init');
 
 
 const express = require('express');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser')
 const graphqlHttp = require('express-graphql');
-const cors = require('cors')
-const Fingerprint = require('express-fingerprint')
 
 performance.mark('Module');
 
@@ -26,29 +22,6 @@ const graphQlResolvers = require('./shared/resolvers');
 performance.mark('Schema-Resolvers');
 
 const app = express();
-
-//Look for environnement variables
-const listenPort = process.env.PORT || 3000
-const origin = process.env.ALLOW_CORS_FRONTEND || 'http://localhost:3000'
-
-const corsOptions = {
-  origin: origin,
-  optionsSuccessStatus: 200,
-  credentials: true,
-}
-
-app.use(cors(corsOptions))
-
-app.use(Fingerprint({
-  parameters:[
-    // Defaults
-    Fingerprint.useragent,
-    Fingerprint.acceptHeaders,
-    Fingerprint.geoip,
-  ]
-}))
-app.use(bodyParser.json({limit:'50mb'}));
-app.use(cookieParser());
 
 performance.mark('Middlewares');
 
@@ -64,7 +37,7 @@ app.use(
 
 performance.mark('EndpointReady');
 
-app.listen(listenPort);
+app.listen(80);
 
 performance.mark('listening');
 

@@ -17,7 +17,17 @@
           "src": "/express",
           "dest": "/express.js",
           "methods": ["POST"]
-        }
+        },
+        {
+            "src": "/express-light",
+            "dest": "/express-light.js",
+            "methods": ["GET"]
+          },
+          {
+            "src": "/express-light",
+            "dest": "/express-light.js",
+            "methods": ["POST"]
+          }
       ]
 
 }
