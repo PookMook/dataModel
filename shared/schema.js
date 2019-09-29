@@ -3,7 +3,7 @@ const { buildSchema } = require('graphql');
 
 module.exports = buildSchema(`
 type Session {
-  id: Number!
+  id: Int!
   uuid: String!
 }
 
