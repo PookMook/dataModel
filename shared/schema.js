@@ -2,20 +2,32 @@ const { buildSchema } = require('graphql');
 
 
 module.exports = buildSchema(`
-type Session {
-  id: Int!
-  uuid: String!
+type Entity {
+  id: ID!
+  name: String!
+  authors:[Author]!
+  versions: [Version!]!
+}
+
+type Version{
+  id:ID!
+  text: String!
+  entity: Entity!
+}
+
+type Author{
+  id:ID!
+  name: String!
+  entities: [Entity!]!
 }
 
 type RootQuery {
-    hello: String!
-    dynamo: Session!
-  }
-  type RootMutation {
-    foo: String!
-  }
-  schema {
-    query: RootQuery
-    mutation: RootMutation
-  }
+  authors: [Author!]!
+  entities: [Entity!]!
+  versions: [Version!]!
+}
+
+schema {
+  query: RootQuery
+}
 `)

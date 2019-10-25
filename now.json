@@ -1,36 +1,21 @@
 { 
-    "name":"PerfTest" ,
+    "name":"Datamodel" ,
     "version": 2,
-    "env": {
-      "KEY_ID":"@aws_secret_id",
-      "KEY":"@aws_secret_key",
-      "REGION":"us-east-1"
-    },
     "builds": [{
         "src": "*.js",
         "use": "@now/node-server"
     }],
     "routes": [
         {
-          "src": "/express",
-          "dest": "/express.js",
+          "src": "/",
+          "dest": "/index.js",
           "methods": ["GET"]
         },
         {
-          "src": "/express",
-          "dest": "/express.js",
+          "src": "/",
+          "dest": "/index.js",
           "methods": ["POST"]
-        },
-        {
-            "src": "/express-light",
-            "dest": "/express-light.js",
-            "methods": ["GET"]
-          },
-          {
-            "src": "/express-light",
-            "dest": "/express-light.js",
-            "methods": ["POST"]
-          }
+        }
       ]
 
 }

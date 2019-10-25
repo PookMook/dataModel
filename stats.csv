@@ -1,6 +1,0 @@
-file,coldboot (ms),warmboot (ms),memory (MB),sequence
-Express:get(graphiql),,115.10,351,115.10
-Express:post(hello),,33.31,355,33.31
-Express-lite:get(graphiql),,76.10,102,76.10
-Express-lite:post(hello),,27.81,104,27.81
-Express-NoGraphiql:get(empty),,25.45,90,25.45
