@@ -1,11 +1,20 @@
 const express = require('express');
+const graphqlHttp = require('express-graphql');
 
-const printJSON = require('./shared/printJSON')
+const graphQlSchema = require('./shared/schema');
+const graphQlResolvers = require('./shared/resolverCircular');
 
 const app = express();
 
 
-app.use('/',printJSON)
-
+app.use(
+    '/',
+    graphqlHttp((req,res) => ({
+      schema: graphQlSchema,
+      rootValue: graphQlResolvers,
+      graphiql: true,
+      context: {req,res}
+    }))
+);
 
 app.listen(80);

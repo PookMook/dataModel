@@ -20,6 +20,11 @@
           "src": "/json",
           "dest": "/json.js",
           "methods": ["GET"]
+        },
+        {
+          "src": "/json",
+          "dest": "/json.js",
+          "methods": ["POST"]
         }
       ]
 
