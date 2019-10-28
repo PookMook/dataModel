@@ -17,13 +17,13 @@
           "methods": ["POST"]
         },
         {
-          "src": "/json",
-          "dest": "/json.js",
+          "src": "/circular",
+          "dest": "/circular.js",
           "methods": ["GET"]
         },
         {
-          "src": "/json",
-          "dest": "/json.js",
+          "src": "/circular",
+          "dest": "/circular.js",
           "methods": ["POST"]
         }
       ]
